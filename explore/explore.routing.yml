@@ -1,0 +1,9 @@
+
+explore.user_details_form:
+  path: '/explore/form/user_details'
+  defaults:
+    _form: '\Drupal\explore\Form\UserDetailsForm'
+    _title: 'UserDetailsForm'
+  requirements:
+    _access: 'TRUE'
+  

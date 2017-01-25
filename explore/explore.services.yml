@@ -1,0 +1,7 @@
+services:
+  test.myevent:
+    class: Drupal\explore\EventSubscriber\MyeventSubscriber
+    arguments: []
+    tags:
+      - { name: event_subscriber }
+
