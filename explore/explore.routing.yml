@@ -1,9 +1,24 @@
 
 explore.user_details_form:
-  path: '/explore/form/user_details'
+  path: '/explore/user_details/add'
   defaults:
     _form: '\Drupal\explore\Form\UserDetailsForm'
     _title: 'UserDetailsForm'
   requirements:
     _access: 'TRUE'
+    
+explore.user_details_list:
+  path: '/explore/user_details/list'
+  defaults:
+    _title: 'List'
+    _controller: '\Drupal\explore\Controller\ExploreController::entryList'
+  requirements:
+    _permission: 'access content'
   
+explore.user_details_update:
+  path: '/explore/user_details/update/{uid}'
+  defaults:
+    _title: 'Update Entry'
+    _form: '\Drupal\explore\Form\UserUpdateForm'
+  requirements:
+    _permission: 'access content'

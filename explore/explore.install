@@ -1,0 +1,56 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the explore module.
+ */
+
+/**
+ * Implements hook_schema().
+ *
+ * Defines the database tables used by this module.
+ *
+ * @see hook_schema()
+ *
+ */
+function explore_schema() {
+  $schema['explore_users'] = array(
+    'description' => 'Stores example person entries for demonstration purposes.',
+    'fields' => array(
+      'uid' => array(
+        'type' => 'serial',
+        'not null' => TRUE,
+        'description' => 'Primary Key: Unique person ID.',
+      ),
+      
+      'first_name' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => 'Name of the person.',
+      ),
+      'last_name' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => 'Surname of the person.',
+      ),
+      'dob' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'The age of the person in years.',
+      ),
+    ),
+    'primary key' => array('uid'),
+    'indexes' => array(
+      'first_name' => array('first_name'),
+      'last_name' => array('last_name'),
+      'dob' => array('last_name'),
+    ),
+  );
+
+  return $schema;
+}
