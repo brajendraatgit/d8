@@ -1,0 +1,7 @@
+explore.explore_config_form:
+  title: 'Explore Configurations'
+  route_name: explore.explore_config_form
+  description: 'Config form for exploration purpose.'
+  parent: system.admin_config_system
+  weight: 99
+

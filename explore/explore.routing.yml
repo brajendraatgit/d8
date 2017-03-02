@@ -22,3 +22,21 @@ explore.user_details_update:
     _form: '\Drupal\explore\Form\UserUpdateForm'
   requirements:
     _permission: 'access content'
+    
+explore.api.post:
+  path: '/explore-api/post.json'
+  defaults: { _controller: '\Drupal\explore\Controller\ExploreAPIController::post_example' }
+  methods:  [POST]
+  requirements:
+    _access: 'TRUE'    
+
+explore.explore_config_form:
+  path: '/admin/config/explore/exploreconfig'
+  defaults:
+    _form: '\Drupal\explore\Form\ExploreConfigForm'
+    _title: 'ExploreConfigForm'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE
+
